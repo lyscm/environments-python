@@ -1,7 +1,7 @@
 # PYTHON ENVIRONMENT BUILDER - REPOSITORY <h1> 
  
 [![build](https://img.shields.io/github/workflow/status/lyscm/environments-python/image%20-%20CI?logo=github)](https://github.com/lyscm/environments-python/blob/master/.github/workflows/deploy-packages.yml)
-![repo size](https://img.shields.io/github/repo-size/lyscm/environments-python?logo=github)
+[![repo size](https://img.shields.io/github/repo-size/lyscm/environments-python?logo=github)](https://github.com/lyscm/environments-python)
 [![package](https://img.shields.io/static/v1?label=package&message=python&color=yellowgreen&logo=github)](https://github.com/lyscm/environments-python/pkgs/container/environments%2Fpython)
 
 ## Initiate package(s): <h2> 
