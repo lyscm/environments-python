@@ -1,5 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-name: "Environment Packages CI"
+name: "environment-python - ci"
 
 on:
   push:
@@ -21,8 +21,8 @@ env:
   TARGET_PLATFORMS: linux/amd64,linux/arm/v6,linux/arm/v7
 
 jobs:
-  parent-image:
-    name: "Build & Push: Parent Image"
+  build-and-push-parent-image:
+    name: "build & push: parent image"
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: environments/python/base
@@ -112,14 +112,14 @@ jobs:
         run: |
           docker buildx build --output "type=image,push=true" ${{ steps.metadata.outputs.buildx_args }}
 
-      - name: 9 - Inspect Packages
+      - name: 8 - Inspect Packages
         if: success()
         run: |
           docker buildx imagetools inspect ${{ steps.metadata.outputs.image_id }}:${{ steps.metadata.outputs.version }}
 
-  image:
-    needs: parent-image
-    name: "Build & Push: Image"
+  build-and-push-image:
+    needs: build-and-push-parent-image
+    name: "build & push: image"
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: environments/python
@@ -208,7 +208,7 @@ jobs:
         run: |
           docker buildx build --output "type=image,push=true" ${{ steps.metadata.outputs.buildx_args }}
 
-      - name: 9 - Inspect Packages
+      - name: 8 - Inspect Packages
         if: success()
         run: |
           docker buildx imagetools inspect ${{ steps.metadata.outputs.image_id }}:${{ steps.metadata.outputs.version }}
