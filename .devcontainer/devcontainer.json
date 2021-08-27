@@ -1,0 +1,160 @@
+{
+	"name": "Python",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "python",
+	"workspaceFolder": "..",
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "/bin/bash"
+			}
+		},
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/*.code-search": true,
+			"**/env/**": true,
+			"**/.vscode/**": true,
+			"**/venv/**": true
+		},
+		"files.watcherExclude": {
+			"**/target/**": true,
+			"**/node_modules/*/**": true,
+			"**/.hg/store/**": true,
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/**": true,
+			"**/env/**": true,
+			"**/venv/**": true,
+			"**/.vscode/**": true,
+			"env-*": true
+		},
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.languageServer": "Jedi",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+		"editor.tokenColorCustomizations": {
+			"textMateRules": [
+				{
+					"scope": "meta.function-call.generic.python",
+					"settings": {
+						"foreground": "#DCDCAA"
+					}
+				},
+				{
+					"scope": "source.python",
+					"settings": {
+						"foreground": "#9CDCFE"
+					}
+				},
+				{
+					"scope": "punctuation.separator.period.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "meta.function.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "punctuation.separator.arguments.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "punctuation.separator.colon.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "punctuation.definition.arguments.end.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "punctuation.definition.arguments.begin.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "punctuation.parenthesis.begin.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "punctuation.parenthesis.end.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "variable.parameter.function-call.python",
+					"settings": {
+						"foreground": "#8f8888"
+					}
+				},
+				{
+					"scope": "punctuation.definition.list.end.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "punctuation.definition.list.begin.python",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				}
+			]
+		}
+	},
+	"extensions": [
+		"ms-python.python",		
+		"ms-python.vscode-pylance",
+		"mutantdino.resourcemonitor",
+		"mechatroner.rainbow-csv",
+		"donjayamanne.githistory",
+		"felipecaputo.git-project-manager",
+		"eamodio.gitlens",
+		"oderwat.indent-rainbow",
+		"ms-azuretools.vscode-docker",
+		"ms-vscode.azurecli",
+		"ms-azuretools.vscode-bicep",
+		"wraith13.bracket-lens",
+		"redhat.vscode-yaml",
+		"visualstudioexptteam.vscodeintellicode",
+		"donjayamanne.python-extension-pack",
+		"kevinrose.vsc-python-indent",
+		"mgesbert.python-path",
+		"littlefoxteam.vscode-python-test-adapter",
+		"njqdev.vscode-python-typehint",
+		"ms-python.gather",
+		"leojhonsong.python-extension-pack",
+		"ms-toolsai.jupyter",
+		"github.remotehub",
+		"coenraads.bracket-pair-colorizer-2",
+		"aaron-bond.better-comments",
+		"yzhang.markdown-all-in-one"
+	],
+	"shutdownAction": "none",
+	"postCreateCommand": "git config --global user.email 'no-reply@lyscm.github.com' && git config --global user.name 'lyscm'"
+}

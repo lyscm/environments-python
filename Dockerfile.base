@@ -1,0 +1,46 @@
+
+# Note: You can use any Debian/Ubuntu based image you want. 
+FROM --platform=$BUILDPLATFORM python:slim
+
+# [Option] Install zsh
+ARG INSTALL_ZSH="true"
+# [Option] Upgrade OS packages to their latest versions
+ARG UPGRADE_PACKAGES="false"
+# [Option] Enable non-root Docker access in container
+ARG ENABLE_NONROOT_DOCKER="true"
+# [Option] Use the OSS Moby CLI instead of the licensed Docker CLI
+ARG USE_MOBY="true"
+
+ARG OWNER="lyscm"
+ARG REPOSITORY_NAME="environments-python"
+
+LABEL org.opencontainers.image.source https://github.com/$OWNER/$REPOSITORY_NAME
+
+# Install needed packages and setup non-root user. Use a separate RUN statement to add your
+# own dependencies. A user of "automatic" attempts to reuse an user ID if one already exists.
+ARG USER_NAME=non-root
+ARG USER_UID=8871
+ARG USER_GID=$USER_UID
+COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
+RUN apt-get update \
+    && /bin/bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USER_NAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true" \
+    && /bin/bash /tmp/library-scripts/docker-debian.sh "${ENABLE_NONROOT_DOCKER}" "/var/run/docker-host.sock" "/var/run/docker.sock" "${USER_NAME}" "${USE_MOBY}" \
+    && apt-get clean -y \
+    && apt-get autoremove -y
+
+# Install Synth to generate realistic data using a declarative data model.
+RUN curl --proto '=https' --tlsv1.2 -sSL https://sh.getsynth.com | sh -s -- --force --ci \
+    && export PATH=$PATH:/root/.local/bin
+
+# [Required] Install pip requirements
+RUN sudo apt-get update \
+    && sudo apt-get install -y sndfile-tools \
+    && sudo apt-get install -y ffmpeg libsm6 libxext6 \
+    && apt-get autoremove -y && apt-get clean -y
+
+# [Option] Install Node.js
+ARG INSTALL_NODE_JS="true"
+RUN apt-get update \
+    && apt install nodejs npm -y \
+    && apt-get clean -y \
+    && apt-get autoremove -y
