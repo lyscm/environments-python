@@ -39,8 +39,6 @@ docker run \
     --restart unless-stopped \
     -v /var/run/docker.sock:/var/run/docker-host.sock \
     --net=host \
-    --cap-add=SYS_PTRACE \
-    --security-opt seccomp:unconfined \
     --privileged \
     $TAG
 ```
