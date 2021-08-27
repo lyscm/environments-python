@@ -1,6 +1,6 @@
 # PYTHON ENVIRONMENT BUILDER - REPOSITORY <h1> 
  
-[![build](https://img.shields.io/github/workflow/status/lyscm/environments-python/Environment%20Packages%20CI?logo=github)](https://github.com/lyscm/environments-python/blob/master/.github/workflows/environment-packages-ci.yml)
+[![build](https://img.shields.io/github/workflow/status/lyscm/environments-python/environment-python%20-%20ci?logo=github)](https://github.com/lyscm/environments-python/blob/master/.github/workflows/build-action.yml)
 [![repo size](https://img.shields.io/github/repo-size/lyscm/environments-python?logo=github)](https://github.com/lyscm/environments-python)
 [![package](https://img.shields.io/static/v1?label=package&message=python&color=yellowgreen&logo=github)](https://github.com/lyscm/environments-python/pkgs/container/environments%2Fpython)
 
