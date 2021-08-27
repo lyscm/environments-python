@@ -1,6 +1,6 @@
 # PYTHON ENVIRONMENT BUILDER - REPOSITORY <h1> 
 
-[![environments-python - CI](https://github.com/lyscm/environments-python/actions/workflows/deploy-packages.yml/badge.svg?branch=master)](https://github.com/lyscm/environments-python/actions/workflows/deploy-packages.yml)
+[![base-image - CI](https://github.com/lyscm/environments-python/actions/workflows/deploy-base-packages.yml/badge.svg?branch=master)](https://github.com/lyscm/environments-python/actions/workflows/deploy-base-packages.yml)
 
 ## Initiate package(s): <h2> 
 

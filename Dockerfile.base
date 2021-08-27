@@ -1,6 +1,6 @@
 
 # Note: You can use any Debian/Ubuntu based image you want. 
-FROM --platform=$BUILDPLATFORM python:slim
+FROM --platform=$BUILDPLATFORM python
 
 # [Option] Install zsh
 ARG INSTALL_ZSH="true"
